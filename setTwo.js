@@ -132,6 +132,18 @@ function uniq(nameList, callback) {
   callback(Array.from(nameSet));
 }
 
+// function uniqu(nameList, callback) {
+//   for (let i = 0; i < nameList.length; i++) {
+//     for (let k = 0; k < nameList.length; k++) {
+//       if (i === k) break;
+//       if (nameList[k] === nameList[i]) {
+//         nameList = nameList.splice(k);
+//       }
+//     }
+//   }
+//   callback(nameList);
+// }
+
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -171,15 +183,11 @@ function each(namesList, callback) {
 
 // CODE HERE
 
-function printItem(item, index) {
-  console.log(`The item at index ${index} is ${item}`);
-}
-
-each(names, printItem);
+each(names, (item, index) => {
+  console.log(`The item at index ${index} is ${item}`)
+})
 
 ////////// CHALLENGES //////////
-
-
 ////////// CHALLENGE 1 //////////
 
 
@@ -291,13 +299,9 @@ function getUserById(userList, userID, callback) {
   }
 }
 
-
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
-
-
-
 
 getUserById(users, '16t', user => {
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
